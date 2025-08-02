@@ -4,22 +4,22 @@
 .post-content {
     font-size: 16px !important;  /* 15px → 16px로 1px 증가 */
     line-height: 1.7 !important;
-    max-width: 900px !important;  /* 750px → 900px로 확장 */
+    max-width: 950px !important;  /* 900px → 950px로 확장 */
     margin: 0 auto !important;
-    padding: 0 2rem !important;   /* 좌우 여백 추가 */
+    padding: 0 1.5rem !important;   /* 2rem → 1.5rem으로 축소 */
 }
 
 /* 전체 컨테이너도 넓게 */
 .main {
-    max-width: 1000px !important;  /* 기본 컨테이너 확장 */
+    max-width: 1050px !important;  /* 1000px → 1050px로 확장 */
     margin: 0 auto !important;
 }
 
 /* 포스트 헤더도 동일하게 */
 .post-header {
-    max-width: 900px !important;
+    max-width: 950px !important;   /* 900px → 950px로 확장 */
     margin: 0 auto !important;
-    padding: 0 2rem !important;
+    padding: 0 1.5rem !important;  /* 2rem → 1.5rem으로 축소 */
 }
 
 /* 포스트 제목 크기 조정 - 이게 문제였음! */
@@ -222,5 +222,163 @@
 [data-theme="dark"] .toc details {
     background-color: rgba(255, 255, 255, 0.05) !important;
     border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 🎨 MODERN & TRENDY DESIGN ELEMENTS */
+
+/* 글래스모피즘 효과 */
+.post-content {
+    backdrop-filter: blur(10px) !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* 부드러운 그림자와 애니메이션 */
+.toc details, .post-content pre {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.toc details:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 타이포그래피 개선 */
+.post-title {
+    background: linear-gradient(135deg, var(--primary), #667eea) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+}
+
+/* 코드 블록 현대적 스타일 */
+.post-content pre {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.post-content pre::before {
+    content: '';
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+}
+
+/* 인라인 코드 모던 스타일 */
+.post-content p code, .post-content li code {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+    color: white !important;
+    padding: 3px 8px !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 링크 호버 애니메이션 */
+.post-content a {
+    position: relative !important;
+    text-decoration: none !important;
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    transition: all 0.3s ease !important;
+}
+
+.post-content a::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -2px !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 2px !important;
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    transition: width 0.3s ease !important;
+}
+
+.post-content a:hover::after {
+    width: 100% !important;
+}
+
+/* 강조 텍스트 그라데이션 */
+.post-content strong {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 600 !important;
+}
+
+/* 리스트 아이템 현대적 스타일 */
+.post-content ul li::marker {
+    content: '▸' !important;
+    color: var(--primary) !important;
+    font-size: 1.2em !important;
+}
+
+.post-content ol li::marker {
+    color: var(--primary) !important;
+    font-weight: 600 !important;
+}
+
+/* 블록퀴트 모던 스타일 */
+.post-content blockquote {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)) !important;
+    border-left: 4px solid transparent !important;
+    border-image: linear-gradient(135deg, #667eea, #764ba2) 1 !important;
+    border-radius: 0 8px 8px 0 !important;
+    padding: 1.5rem !important;
+    margin: 2rem 0 !important;
+    position: relative !important;
+}
+
+.post-content blockquote::before {
+    content: '"' !important;
+    font-size: 3rem !important;
+    color: var(--primary) !important;
+    position: absolute !important;
+    top: -10px !important;
+    left: 10px !important;
+    opacity: 0.3 !important;
+}
+
+/* 다크모드 최적화 */
+[data-theme="dark"] .post-content {
+    background: rgba(0, 0, 0, 0.02) !important;
+}
+
+[data-theme="dark"] .post-content pre {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+}
+
+[data-theme="dark"] .post-content p code,
+[data-theme="dark"] .post-content li code {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* 스크롤바 커스터마이징 */
+.post-content::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.post-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1) !important;
+    border-radius: 4px !important;
+}
+
+.post-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    border-radius: 4px !important;
+}
+
+.post-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea) !important;
 }
 </style>
