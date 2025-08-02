@@ -233,7 +233,7 @@
 }
 
 /* 부드러운 그림자와 애니메이션 */
-.toc details, .post-content pre {
+.toc details {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
     transition: all 0.3s ease !important;
 }
@@ -252,14 +252,13 @@
     text-shadow: none !important;
 }
 
-/* 코드 블록 점잖은 스타일 */
+/* 코드 블록 기본 스타일 */
 .post-content pre {
-    background: rgba(248, 249, 250, 0.8) !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    border-radius: 8px !important;
-    border-left: 4px solid var(--primary) !important;
-    position: relative !important;
-    overflow: hidden !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    margin: 1.2rem 0 !important;
+    padding: 0.8rem !important;
+    border-radius: 4px !important;
 }
 
 /* 인라인 코드 모던 스타일 */
@@ -345,11 +344,6 @@
     background: rgba(0, 0, 0, 0.02) !important;
 }
 
-[data-theme="dark"] .post-content pre {
-    background: rgba(45, 55, 72, 0.9) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-left: 4px solid var(--primary) !important;
-}
 
 [data-theme="dark"] .post-content p code,
 [data-theme="dark"] .post-content li code {
