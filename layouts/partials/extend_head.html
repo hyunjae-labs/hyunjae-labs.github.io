@@ -150,4 +150,76 @@
 [data-theme="dark"] .post-content hr {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
 }
+
+/* TOC(Table of Contents) 스타일 개선 */
+.toc {
+    max-width: 900px !important;  /* 본문과 동일한 너비로 제한 */
+    margin: 0 auto !important;
+    padding: 0 2rem !important;   /* 본문과 동일한 패딩 */
+    box-sizing: border-box !important;
+}
+
+.toc details {
+    max-width: 100% !important;
+    margin: 1.5rem auto !important;
+    padding: 1rem !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px !important;
+    background-color: var(--code-bg) !important;
+}
+
+.toc summary {
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    padding: 0.5rem 0 !important;
+    color: var(--primary) !important;
+}
+
+.toc nav ul {
+    margin: 1rem 0 0 0 !important;
+    padding-left: 1.5rem !important;
+}
+
+.toc nav li {
+    margin: 0.3rem 0 !important;
+    line-height: 1.4 !important;
+}
+
+.toc nav a {
+    color: var(--secondary) !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+}
+
+.toc nav a:hover {
+    color: var(--primary) !important;
+    text-decoration: underline !important;
+}
+
+/* 모바일에서 TOC 스타일 */
+@media (max-width: 768px) {
+    .toc {
+        max-width: 100% !important;
+        padding: 0 1rem !important;  /* 모바일에서 좌우 여백 */
+    }
+    
+    .toc details {
+        margin: 1rem 0 !important;
+        padding: 0.8rem !important;
+    }
+    
+    .toc nav ul {
+        padding-left: 1rem !important;
+    }
+    
+    .toc nav a {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* 다크모드에서 TOC */
+[data-theme="dark"] .toc details {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
 </style>
