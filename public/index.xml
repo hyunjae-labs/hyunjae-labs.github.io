@@ -2,17 +2,97 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Hyunjae Blog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://hyunjae-labs.github.io/</link>
     <description>Recent content on Hyunjae Blog</description>
     <generator>Hugo -- 0.148.2</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 03 Aug 2025 07:27:30 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Aug 2025 08:30:00 +0900</lastBuildDate>
+    <atom:link href="https://hyunjae-labs.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://hyunjae-labs.github.io/about/</link>
+      <pubDate>Sun, 03 Aug 2025 08:30:00 +0900</pubDate>
+      <guid>https://hyunjae-labs.github.io/about/</guid>
+      <description>&lt;h2 id=&#34;소개&#34;&gt;소개&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;현업&lt;/strong&gt;: C언어 임베디드 시스템 SW 개발&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;관심사&lt;/strong&gt;: LLM/AI, 프롬프트 엔지니어링&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;기술-스택&#34;&gt;기술 스택&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;주요&lt;/strong&gt;: C, 임베디드 시스템&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;관심&lt;/strong&gt;: Python, AI/ML, LLM&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;도구&lt;/strong&gt;: Git, GitHub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;연락&#34;&gt;연락&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/hyunjae-labs&#34;&gt;@hyunjae-labs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email: &lt;a href=&#34;mailto:thecurrent.lim@gmail.com&#34;&gt;thecurrent.lim@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded><![CDATA[<h2 id="소개">소개</h2>
+<ul>
+<li><strong>현업</strong>: C언어 임베디드 시스템 SW 개발</li>
+<li><strong>관심사</strong>: LLM/AI, 프롬프트 엔지니어링</li>
+</ul>
+<h2 id="기술-스택">기술 스택</h2>
+<ul>
+<li><strong>주요</strong>: C, 임베디드 시스템</li>
+<li><strong>관심</strong>: Python, AI/ML, LLM</li>
+<li><strong>도구</strong>: Git, GitHub</li>
+</ul>
+<h2 id="연락">연락</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/hyunjae-labs">@hyunjae-labs</a></li>
+<li>Email: <a href="mailto:thecurrent.lim@gmail.com">thecurrent.lim@gmail.com</a></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>https://hyunjae-labs.github.io/projects/</link>
+      <pubDate>Sun, 03 Aug 2025 08:30:00 +0900</pubDate>
+      <guid>https://hyunjae-labs.github.io/projects/</guid>
+      <description>&lt;h2 id=&#34;supergemini-framework&#34;&gt;SuperGemini Framework&lt;/h2&gt;
+&lt;p&gt;Gemini CLI를 위한 전문화된 명령어와 페르소나 시스템&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;설명&lt;/strong&gt;: SuperClaude 아키텍처를 Gemini CLI에 포팅한 프레임워크&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;기술스택&lt;/strong&gt;: Python, Gemini API, MCP&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;주요기능&lt;/strong&gt;: 17개 전문 명령어, 도메인별 페르소나, MCP 서버 통합&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/SuperGemini-Org/SuperGemini_Framework&#34;&gt;SuperGemini-Org/SuperGemini_Framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PyPI&lt;/strong&gt;: &lt;code&gt;pip install SuperGemini&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;특징&#34;&gt;특징&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 17개 명령어 완전 작동&lt;/li&gt;
+&lt;li&gt;✅ 페르소나 시스템 정상 동작&lt;/li&gt;
+&lt;li&gt;✅ Context7, Sequential, Playwright MCP 연동&lt;/li&gt;
+&lt;li&gt;⚠️ Magic MCP는 호환성 문제로 비활성화&lt;/li&gt;
+&lt;li&gt;✅ MIT License 오픈소스 배포&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded><![CDATA[<h2 id="supergemini-framework">SuperGemini Framework</h2>
+<p>Gemini CLI를 위한 전문화된 명령어와 페르소나 시스템</p>
+<ul>
+<li><strong>설명</strong>: SuperClaude 아키텍처를 Gemini CLI에 포팅한 프레임워크</li>
+<li><strong>기술스택</strong>: Python, Gemini API, MCP</li>
+<li><strong>주요기능</strong>: 17개 전문 명령어, 도메인별 페르소나, MCP 서버 통합</li>
+<li><strong>GitHub</strong>: <a href="https://github.com/SuperGemini-Org/SuperGemini_Framework">SuperGemini-Org/SuperGemini_Framework</a></li>
+<li><strong>PyPI</strong>: <code>pip install SuperGemini</code></li>
+</ul>
+<h3 id="특징">특징</h3>
+<ul>
+<li>✅ 17개 명령어 완전 작동</li>
+<li>✅ 페르소나 시스템 정상 동작</li>
+<li>✅ Context7, Sequential, Playwright MCP 연동</li>
+<li>⚠️ Magic MCP는 호환성 문제로 비활성화</li>
+<li>✅ MIT License 오픈소스 배포</li>
+</ul>
+]]></content:encoded>
+    </item>
     <item>
       <title>SuperGemini 개발 일지: SuperClaude 아키텍처 분석과 포팅</title>
-      <link>http://localhost:1313/posts/supergemini-development-journey/</link>
+      <link>https://hyunjae-labs.github.io/posts/supergemini-development-journey/</link>
       <pubDate>Sun, 03 Aug 2025 07:27:30 +0900</pubDate>
-      <guid>http://localhost:1313/posts/supergemini-development-journey/</guid>
+      <guid>https://hyunjae-labs.github.io/posts/supergemini-development-journey/</guid>
       <description>LLM 평가 시스템을 만들던 중 SuperClaude를 발견하고 Gemini용으로 포팅한 과정</description>
       <content:encoded><![CDATA[<h2 id="배경-llm-평가에-대한-관심">배경: LLM 평가에 대한 관심</h2>
 <p>나는 평소 LLM과 프롬프트 평가에 관심이 많아서 <strong>자체 LLM 평가 시스템</strong>을 개발해 사용하고 있었다. 이 시스템은 Claude의 서로 다른 프롬프트 전략을 자동으로 비교 평가하는 도구로, Promptfoo 프레임워크를 기반으로 한다:</p>
@@ -28,6 +108,7 @@
 <li><strong>객관적 기준</strong>: 사전 정의된 채점 루브릭으로 편향 최소화</li>
 </ul>
 <p>이 시스템을 통해 프롬프트 성능을 객관적으로 측정하고 개선하는 것이 매우 흥미로웠다.</p>
+<hr>
 <h2 id="superclaude-발견">SuperClaude 발견</h2>
 <p>그러던 중 <strong>SuperClaude</strong>라는 참신한 시스템을 알게 되었다. Claude CLI를 확장하여 전문화된 명령어와 페르소나 시스템을 제공하는 프레임워크였다. 이 아키텍처가 정말 인상적이었다:</p>
 <ul>
@@ -39,6 +120,7 @@
 <h2 id="gemini-버전의-필요성">Gemini 버전의 필요성</h2>
 <p>나는 Gemini-CLI도 종종 사용하는데, 이런 시스템이 Gemini에는 없었다. <strong>&ldquo;Gemini에서도 이걸 사용할 수 있다면?&rdquo;</strong> 하는 생각이 들었다.</p>
 <p>그래서 SuperClaude의 아키텍처를 분석하고 Gemini CLI에 맞게 적응시키기 시작했다.</p>
+<hr>
 <h2 id="개발-과정">개발 과정</h2>
 <h3 id="1-아키텍처-분석">1. 아키텍처 분석</h3>
 <p>SuperClaude의 구조를 파악하고 Gemini CLI의 차이점을 분석:</p>
@@ -60,6 +142,7 @@ Gemini API 함수명 규칙과 충돌이 있어서 현재는 <strong>비활성�
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># setup.py에서 기본적으로 disabled</span>
 </span></span><span style="display:flex;"><span>magic_mcp_enabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
 </span></span></code></pre></div><p>필요시 사용자가 수동으로 활성화할 수 있도록 설정 옵션 제공.</p>
+<hr>
 <h2 id="오픈소스-배포">오픈소스 배포</h2>
 <p>개발이 완료된 후, <strong>혼자만 사용하기 아까운 시스템</strong>이라는 생각이 들었다.</p>
 <h3 id="mit-license로-배포">MIT License로 배포</h3>
@@ -80,11 +163,12 @@ Gemini API 함수명 규칙과 충돌이 있어서 현재는 <strong>비활성�
 <li>⚠️ Magic MCP는 호환성 문제로 비활성화</li>
 <li>✅ PyPI 배포 완료</li>
 </ul>
+<hr>
 <h2 id="배운-점">배운 점</h2>
 <ol>
 <li><strong>오픈소스의 가치</strong>: 좋은 아이디어는 다른 플랫폼으로도 확장될 수 있다</li>
 <li><strong>API 차이점</strong>: Claude와 Gemini의 함수명 규칙 차이가 생각보다 중요했다</li>
-<li><strong>커뮤니티</strong>: 필요한 사람들이 실제로 사용하고 있다는 것이 보람있다</li>
+<li><strong>기술적 호환성</strong>: 서로 다른 AI 플랫폼 간의 차이점을 이해하게 되었다</li>
 </ol>
 <h2 id="향후-계획">향후 계획</h2>
 <ul>

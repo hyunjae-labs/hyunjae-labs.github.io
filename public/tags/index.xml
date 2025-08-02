@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Hyunjae Blog</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://hyunjae-labs.github.io/tags/</link>
     <description>Recent content in Tags on Hyunjae Blog</description>
     <generator>Hugo -- 0.148.2</generator>
     <language>ko-kr</language>
     <lastBuildDate>Sun, 03 Aug 2025 07:27:30 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hyunjae-labs.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LLM</title>
-      <link>http://localhost:1313/tags/llm/</link>
+      <link>https://hyunjae-labs.github.io/tags/llm/</link>
       <pubDate>Sun, 03 Aug 2025 07:27:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/llm/</guid>
+      <guid>https://hyunjae-labs.github.io/tags/llm/</guid>
       <description></description>
     </item>
     <item>
       <title>MCP</title>
-      <link>http://localhost:1313/tags/mcp/</link>
+      <link>https://hyunjae-labs.github.io/tags/mcp/</link>
       <pubDate>Sun, 03 Aug 2025 07:27:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/mcp/</guid>
+      <guid>https://hyunjae-labs.github.io/tags/mcp/</guid>
       <description></description>
     </item>
     <item>
       <title>OpenSource</title>
-      <link>http://localhost:1313/tags/opensource/</link>
+      <link>https://hyunjae-labs.github.io/tags/opensource/</link>
       <pubDate>Sun, 03 Aug 2025 07:27:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/opensource/</guid>
+      <guid>https://hyunjae-labs.github.io/tags/opensource/</guid>
       <description></description>
     </item>
     <item>
       <title>SuperGemini</title>
-      <link>http://localhost:1313/tags/supergemini/</link>
+      <link>https://hyunjae-labs.github.io/tags/supergemini/</link>
       <pubDate>Sun, 03 Aug 2025 07:27:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/supergemini/</guid>
+      <guid>https://hyunjae-labs.github.io/tags/supergemini/</guid>
       <description></description>
     </item>
     <item>
       <title>개발일지</title>
-      <link>http://localhost:1313/tags/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/</link>
+      <link>https://hyunjae-labs.github.io/tags/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/</link>
       <pubDate>Sun, 03 Aug 2025 07:27:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/</guid>
+      <guid>https://hyunjae-labs.github.io/tags/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/</guid>
       <description></description>
     </item>
     <item>
       <title>프롬프트평가</title>
-      <link>http://localhost:1313/tags/%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%ED%8F%89%EA%B0%80/</link>
+      <link>https://hyunjae-labs.github.io/tags/%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%ED%8F%89%EA%B0%80/</link>
       <pubDate>Sun, 03 Aug 2025 07:27:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%ED%8F%89%EA%B0%80/</guid>
+      <guid>https://hyunjae-labs.github.io/tags/%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%ED%8F%89%EA%B0%80/</guid>
       <description></description>
     </item>
   </channel>
