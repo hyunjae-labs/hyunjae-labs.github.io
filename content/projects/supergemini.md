@@ -27,7 +27,6 @@ SuperClaude 아키텍처를 Gemini CLI에 포팅한 프레임워크
 ## 링크
 
 - **GitHub**: [SuperGemini-Org/SuperGemini_Framework](https://github.com/SuperGemini-Org/SuperGemini_Framework)
-- **PyPI**: `pip install SuperGemini`
 
 ## 설치 및 사용
 
