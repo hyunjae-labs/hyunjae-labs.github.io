@@ -131,9 +131,23 @@
     }
 }
 
+/* 구분선 스타일 개선 */
+.post-content hr {
+    border: none !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent) !important;
+    margin: 3rem 0 !important;
+    opacity: 0.6 !important;
+}
+
 /* 다크모드 지원 */
 [data-theme="dark"] .post-content p code,
 [data-theme="dark"] .post-content li code {
     background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* 다크모드에서 구분선 */
+[data-theme="dark"] .post-content hr {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
 }
 </style>

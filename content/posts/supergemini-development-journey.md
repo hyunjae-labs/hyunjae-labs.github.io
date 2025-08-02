@@ -22,6 +22,8 @@ categories = ['프로젝트']
 
 이 시스템을 통해 프롬프트 성능을 객관적으로 측정하고 개선하는 것이 매우 흥미로웠다.
 
+---
+
 ## SuperClaude 발견
 
 그러던 중 **SuperClaude**라는 참신한 시스템을 알게 되었다. Claude CLI를 확장하여 전문화된 명령어와 페르소나 시스템을 제공하는 프레임워크였다. 이 아키텍처가 정말 인상적이었다:
@@ -36,6 +38,8 @@ categories = ['프로젝트']
 나는 Gemini-CLI도 종종 사용하는데, 이런 시스템이 Gemini에는 없었다. **"Gemini에서도 이걸 사용할 수 있다면?"** 하는 생각이 들었다.
 
 그래서 SuperClaude의 아키텍처를 분석하고 Gemini CLI에 맞게 적응시키기 시작했다.
+
+---
 
 ## 개발 과정
 
@@ -63,6 +67,8 @@ magic_mcp_enabled = False
 
 필요시 사용자가 수동으로 활성화할 수 있도록 설정 옵션 제공.
 
+---
+
 ## 오픈소스 배포
 
 개발이 완료된 후, **혼자만 사용하기 아까운 시스템**이라는 생각이 들었다. 
@@ -86,6 +92,8 @@ python -m SuperGemini install
 - ✅ Context7, Sequential, Playwright MCP 연동
 - ⚠️ Magic MCP는 호환성 문제로 비활성화
 - ✅ PyPI 배포 완료
+
+---
 
 ## 배운 점
 
