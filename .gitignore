@@ -16,8 +16,9 @@ hugo_stats.json
 ehthumbs.db
 Thumbs.db
 
-# Claude AI preferences (private)
+# AI preferences
 CLAUDE.md
+GEMINI.md
 
 # Private resources folder
 /resources/

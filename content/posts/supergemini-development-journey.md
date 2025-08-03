@@ -71,18 +71,7 @@ magic_mcp_enabled = False
 
 ## 오픈소스 배포
 
-개발이 완료된 후, **혼자만 사용하기 아까운 시스템**이라는 생각이 들었다. 
-
-### MIT License로 배포
-- GitHub: [SuperGemini-Org/SuperGemini_Framework](https://github.com/SuperGemini-Org/SuperGemini_Framework)
-- PyPI: `pip install SuperGemini`
-- 원본 SuperClaude에 대한 적절한 attribution 포함
-
-### 설치 및 사용
-```bash
-pip install SuperGemini
-python -m SuperGemini install
-```
+개발이 완료된 후, MIT License로 오픈소스 배포를 결정했다. PyPI 패키징을 통해 `pip install SuperGemini` 한 줄로 설치 가능하도록 했다.
 
 ## 현재 상태
 
@@ -110,3 +99,5 @@ python -m SuperGemini install
 ---
 
 **결론**: LLM 평가에 대한 개인적 관심이 의미있는 오픈소스 프로젝트로 발전했다. SuperClaude 팀에게 감사하며, Gemini 사용자들에게도 도움이 되길 바란다.
+
+**관련 프로젝트**: [SuperGemini](/projects/#supergemini)
