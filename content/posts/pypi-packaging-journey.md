@@ -9,18 +9,18 @@ categories = ['개발기술']
 
 ## 배경: pip install에 대한 무지
 
-평소 나는 아무 생각 없이 `pip install` 명령어를 사용해왔다. 필요한 라이브러리가 있으면 그냥 설치하고, 잘 되니까 원리는 궁금하지 않았다.
+기존에 별 생각 없이 `pip install` 명령어 사용. 필요한 라이브러리 설치 후 잘 작동하니 원리에 대한 궁금심 없음.
 
-그런데 SuperGemini 프로젝트를 완성하고 나니 **"다른 사람들도 쉽게 설치할 수 있게 하려면 어떻게 해야 할까?"** 하는 생각이 들었다.
+SuperGemini 프로젝트 완성 후 **"다른 사람들도 쉽게 설치할 수 있게 하려면 어떻게 해야 할까?"** 고민 발생.
 
-처음엔 단순히 "GitHub에서 `git clone` 하면 되지 않나?" 생각했는데, 사용자 입장에서 보니 너무 불편했다:
+처음엔 단순히 "GitHub에서 `git clone` 하면 될 것" 생각했으나 사용자 입장에서 너무 불편:
 
 - 매번 `git clone` 필요
 - 의존성 수동 설치
 - 업데이트 확인 번거로움
 - 설치 위치 고민
 
-그래서 **"어떻게 하면 `pip install SuperGemini` 한 줄로 설치할 수 있을까?"** 라는 질문이 생겼다.
+그래서 **"어떻게 하면 `pip install SuperGemini` 한 줄로 설치할 수 있을까?"** 라는 질문 발생.
 
 ---
 
@@ -28,7 +28,7 @@ categories = ['개발기술']
 
 ### 1. PyPI란 무엇인가?
 
-조사해보니 PyPI(Python Package Index)는 Python 패키지의 중앙 저장소였다:
+조사 결과 PyPI(Python Package Index)는 Python 패키지의 중앙 저장소:
 
 - **URL**: https://pypi.org
 - **목적**: Python 패키지 호스팅 및 배포
@@ -40,7 +40,7 @@ categories = ['개발기술']
 pip install SuperGemini
 ```
 
-이 명령어 하나가 실제로는 이런 과정을 거친다:
+이 명령어 하나가 실제로 거치는 과정:
 
 1. **PyPI 검색**: pypi.org에서 "SuperGemini" 패키지 검색
 2. **최신 버전 확인**: 사용 가능한 버전 목록에서 최신 버전 선택
@@ -51,7 +51,7 @@ pip install SuperGemini
 
 ### 3. 패키지 파일 형태
 
-PyPI에는 두 가지 형태로 패키지가 올라간다:
+PyPI에 올라가는 패키지 형태:
 
 - **Source Distribution** (sdist): `.tar.gz` 파일
 - **Wheel** (bdist_wheel): `.whl` 파일 (미리 컴파일된 바이너리)
@@ -62,7 +62,7 @@ PyPI에는 두 가지 형태로 패키지가 올라간다:
 
 ### 1. 프로젝트 구조 설계
 
-먼저 PyPI 업로드에 맞는 디렉토리 구조를 만들었다:
+먼저 PyPI 업로드에 맞는 디렉토리 구조 생성:
 
 ```
 SuperGemini_Framework/
@@ -81,7 +81,7 @@ SuperGemini_Framework/
 
 ### 2. setup.py 작성의 고민
 
-패키지 메타데이터를 정의하는 핵심 파일이다. 처음엔 무엇을 써야 할지 막막했다:
+패키지 메타데이터를 정의하는 핵심 파일. 처음엔 무엇을 써야 할지 막막:
 
 ```python
 from setuptools import setup, find_packages
@@ -147,7 +147,7 @@ PyPI에 업로드하려면 계정과 API 토큰이 필요했다:
 
 ### 4. 패키지 빌드
 
-업로드하기 전에 패키지를 빌드해야 했다:
+업로드 전 패키지 빌드 필요:
 
 ```bash
 # 빌드 도구 설치
@@ -239,7 +239,7 @@ PyPI 프로젝트 페이지에서 확인 가능:
 
 ### 1. GitHub Actions 자동 배포
 
-수동 업로드가 번거로워서 GitHub Actions로 자동화:
+수동 업로드 번거로워 GitHub Actions로 자동화:
 
 ```yaml
 # .github/workflows/publish.yml
@@ -325,16 +325,16 @@ requirements-dev.txt   # 개발용 의존성 (pytest, black 등)
 ## 배운 점
 
 ### 1. PyPI 생태계의 중요성
-단순히 코드를 공유하는 것이 아니라, Python 생태계의 일부가 되는 것이다.
+단순히 코드 공유가 아니라 Python 생태계의 일부가 되는 것.
 
 ### 2. 사용자 경험의 중요성
-`pip install` 한 줄로 설치할 수 있다는 것이 얼마나 중요한지 깨달았다.
+`pip install` 한 줄로 설치 가능하다는 것의 중요성 깨달음.
 
 ### 3. 메타데이터의 중요성
-setup.py의 정보들이 사용자들이 패키지를 발견하고 선택하는 데 결정적 역할을 한다.
+setup.py 정보들이 사용자들이 패키지를 발견하고 선택하는 데 결정적 역할.
 
 ### 4. 버전 관리의 중요성
-시맨틱 버저닝을 제대로 지키지 않으면 의존성 관리가 복잡해진다.
+시맨틱 버저닝을 제대로 지키지 않으면 의존성 관리 복잡해짐.
 
 ---
 
@@ -363,4 +363,4 @@ setup.py의 정보들이 사용자들이 패키지를 발견하고 선택하는 
 
 ---
 
-**결론**: pip install의 배경을 이해하고 직접 패키지를 배포해보니, Python 생태계의 편리함과 복잡함을 동시에 느낄 수 있었다. 이제 `pip install`을 할 때마다 그 뒤에 숨어있는 과정들이 떠오를 것 같다.
+**결론**: pip install 배경 이해하고 직접 패키지 배포해보니 Python 생태계의 편리함과 복잡함을 동시에 체감. 이제 `pip install` 시 그 뒤에 숨어있는 과정들 떠오를 것.

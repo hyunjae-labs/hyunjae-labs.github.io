@@ -9,7 +9,7 @@ summary: "Jupyter Notebook의 메타데이터 문제를 해결하기 위해 MCP 
 
 ## 문제 발견: AI가 읽기 어려운 Jupyter Notebook
 
-나는 평소 Jupyter Notebook으로 데이터 분석 작업을 자주 하는데, AI에게 노트북 내용을 분석해달라고 할 때 항상 문제가 있었다. 
+평소 Jupyter Notebook으로 데이터 분석 작업 중 AI 분석 요청 시 문제 발생 
 
 ### 발견한 문제
 `.ipynb` 파일은 **엄청난 메타데이터**를 숨기고 있다:
@@ -41,22 +41,22 @@ summary: "Jupyter Notebook의 메타데이터 문제를 해결하기 위해 MCP 
 ### 해결 방향
 **"AI가 읽기 편한 상태로 만들고, 필요할 때 다시 노트북으로 변환하면 되지 않을까?"**
 
-이 고민에서 출발해서:
+이 고민에서 출발:
 1. `ipynb` → `md` (AI 분석용, 메타데이터 제거)
 2. `md` → `ipynb` (실행용, 다시 변환)
 
-이런 양방향 변환 시스템을 만들기로 했다.
+양방향 변환 시스템 개발 결정
 
 ### NPM 배포 이유
 **"git clone 없이 한 줄로 설치할 수 있게 하자"**
 
-기존 도구들은 대부분 git clone 후 수동 설정이 필요했다:
+기존 도구들 대부분 git clone 후 수동 설정 필요:
 - 매번 저장소 클론 필요
 - 의존성 수동 설치  
 - 업데이트 확인 번거로움
 - MCP 서버 등록 복잡
 
-`npx notebook-convert-mcp install` 한 줄로 모든 것이 해결되도록 하고 싶었다.
+`npx notebook-convert-mcp install` 한 줄로 모든 것 해결 목표
 
 ---
 
@@ -64,7 +64,7 @@ summary: "Jupyter Notebook의 메타데이터 문제를 해결하기 위해 MCP 
 
 ### MCP 서버 구조
 
-MCP 서버는 크게 두 가지 함수를 구현해야 한다:
+MCP 서버는 크게 두 가지 함수 구현 필요:
 
 ```python
 @server.list_tools()
@@ -83,7 +83,7 @@ async def call_tool(name: str, arguments: dict) -> list[types.Content]:
 
 ### 핵심 변환 로직
 
-가장 중요한 부분은 실제 변환 로직이었다:
+가장 중요한 부분: 실제 변환 로직
 
 **핵심 아이디어**:
 - Notebook → Markdown: 실행 결과와 메타데이터 제거, 순수한 코드와 마크다운만 추출
@@ -95,7 +95,7 @@ async def call_tool(name: str, arguments: dict) -> list[types.Content]:
 
 ### 1. 파일명 규칙 문제
 
-처음에는 `mcp-server.py`로 파일명을 지었는데, Python 관례에 맞춰 언더바로 변경했다.
+처음에는 `mcp-server.py`로 파일명 지정 후 Python 관례에 맞춰 언더바로 변경
 
 ```bash
 # 파일명 변경
@@ -107,7 +107,7 @@ mv mcp-server.py mcp_server.py
 
 ### 2. NPX 설치 스크립트 문제
 
-`npx notebook-convert-mcp --version`을 실행했는데 설치 스크립트가 실행되는 문제가 있었다.
+`npx notebook-convert-mcp --version` 실행 시 설치 스크립트가 실행되는 문제 발생
 
 **원인**: `package.json`의 `bin` 필드가 설치 스크립트를 가리키고 있어서 모든 명령어가 설치로 연결됨
 
@@ -115,12 +115,12 @@ mv mcp-server.py mcp_server.py
 
 ### 3. Claude Code CLI vs Claude Desktop 설정
 
-처음에는 설치 스크립트가 Claude Desktop 경로를 가리키고 있어서 Claude Code CLI에서 인식되지 않는 문제가 있었다:
+처음에는 설치 스크립트가 Claude Desktop 경로를 가리켜 Claude Code CLI에서 인식되지 않는 문제:
 
 - **Claude Desktop**: `~/.config/claude-code/claude_desktop_config.json`
 - **Claude Code CLI**: `~/.claude.json`
 
-설치 스크립트가 올바른 경로(`~/.claude.json`)와 정확한 설정 구조(`mcpServers` 객체)를 사용하도록 수정했다:
+설치 스크립트를 올바른 경로(`~/.claude.json`)와 정확한 설정 구조(`mcpServers` 객체) 사용하도록 수정:
 
 ```bash
 claude mcp add --scope user notebook-convert-mcp -- python3 /path/to/mcp_server.py
@@ -146,7 +146,7 @@ claude mcp add --scope user notebook-convert-mcp -- python3 /path/to/mcp_server.
 }
 ```
 
-완벽하게 작동했고, 양방향 변환도 성공적으로 이루어졌다.
+완벽 작동, 양방향 변환도 성공적 수행
 
 ---
 
@@ -154,21 +154,21 @@ claude mcp add --scope user notebook-convert-mcp -- python3 /path/to/mcp_server.
 
 ### 1. 사용자 편의성의 중요성
 
-`git clone` 대신 `npx` 한 줄로 설치할 수 있게 만든 것이 큰 차이를 만들었다. 기술적 완성도보다 사용 편의성이 더 중요할 때가 있다.
+`git clone` 대신 `npx` 한 줄로 설치 가능하게 만든 것이 큰 차이. 기술적 완성도보다 사용 편의성이 더 중요할 때 존재
 
 ### 2. Python과 NPM 생태계 연결
 
-Python 라이브러리를 NPM으로 배포하는 것이 가능하다는 점이 흥미로웠다. `install.js`가 Python 의존성 설치와 MCP 서버 등록을 모두 처리하는 구조였다.
+Python 라이브러리를 NPM으로 배포 가능하다는 점 흥미로움. `install.js`가 Python 의존성 설치와 MCP 서버 등록을 모두 처리하는 구조
 
 ### 3. 메타데이터 제거의 효과
 
-단순해 보이는 기능이지만 실제로 사용하니 AI 분석 품질이 크게 개선되었다. 노트북의 노이즈가 제거되니 AI가 핵심 내용에 집중할 수 있게 되었다.
+단순해 보이는 기능이지만 실제 사용 시 AI 분석 품질 크게 개선. 노트북 노이즈 제거로 AI가 핵심 내용에 집중 가능
 
 ---
 
 ## 개선 계획
 
-현재 기본 기능은 완성되었지만 추가할 수 있는 기능들:
+현재 기본 기능 완성, 추가 가능 기능들:
 
 - **배치 변환 기능**: 폴더 단위 일괄 변환
 - **메타데이터 보존 옵션**: 필요시 메타데이터 유지
@@ -176,6 +176,6 @@ Python 라이브러리를 NPM으로 배포하는 것이 가능하다는 점이 �
 
 ---
 
-**결론**: Jupyter Notebook의 메타데이터 문제를 해결하기 위해 시작한 프로젝트가 NPM 배포까지 이어졌다. 기술적 완성도만큼이나 사용자 편의성이 중요하다는 것을 배웠다.
+**결론**: Jupyter Notebook 메타데이터 문제 해결 위해 시작한 프로젝트가 NPM 배포까지 연결. 기술적 완성도만큼이나 사용자 편의성 중요함을 학습
 
 **관련 프로젝트**: [notebook-convert-mcp](/projects/#notebook-convert-mcp)

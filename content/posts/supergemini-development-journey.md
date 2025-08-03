@@ -9,7 +9,7 @@ categories = ['프로젝트']
 
 ## 배경: LLM 평가에 대한 관심
 
-나는 평소 LLM과 프롬프트 평가에 관심이 많아서 **자체 LLM 평가 시스템**을 개발해 사용하고 있었다. 이 시스템은 Claude의 서로 다른 프롬프트 전략을 자동으로 비교 평가하는 도구로, Promptfoo 프레임워크를 기반으로 한다:
+평소 LLM과 프롬프트 평가에 관심이 많아 **자체 LLM 평가 시스템** 개발해 사용. 이 시스템은 Claude의 서로 다른 프롬프트 전략을 자동으로 비교 평가하는 도구로, Promptfoo 프레임워크 기반:
 
 **평가 데이터 소스**:
 - **학습 데이터 이후 문제**: Codeforces Round 1036/1037 (2025년 7월), AtCoder World Tour Finals (2025년 7월) 등 Claude 학습 컷오프 이후 출제된 문제들
@@ -20,13 +20,13 @@ categories = ['프로젝트']
 - **LLM 기반 채점**: OpenAI GPT가 응답 품질을 1-10점으로 상세 평가
 - **객관적 기준**: 사전 정의된 채점 루브릭으로 편향 최소화
 
-이 시스템을 통해 프롬프트 성능을 객관적으로 측정하고 개선하는 것이 매우 흥미로웠다.
+이 시스템을 통해 프롬프트 성능을 객관적으로 측정하고 개선하는 것이 매우 흥미로움.
 
 ---
 
 ## SuperClaude 발견
 
-그러던 중 **SuperClaude**라는 참신한 시스템을 알게 되었다. Claude CLI를 확장하여 명령어와 페르소나 시스템을 제공하는 프레임워크였다. 이 아키텍처가 정말 인상적이었다:
+그러던 중 **SuperClaude**라는 참신한 시스템 발견. Claude CLI를 확장하여 명령어와 페르소나 시스템을 제공하는 프레임워크. 이 아키텍처가 정말 인상적:
 
 - 17개 명령어 시스템
 - 도메인별 페르소나 (architect, frontend, backend 등)
@@ -35,9 +35,9 @@ categories = ['프로젝트']
 
 ## Gemini 버전의 필요성
 
-나는 Gemini-CLI도 종종 사용하는데, 이런 시스템이 Gemini에는 없었다. **"Gemini에서도 이걸 사용할 수 있다면?"** 하는 생각이 들었다.
+Gemini-CLI도 종종 사용하는데, 이런 시스템이 Gemini에는 없음. **"Gemini에서도 이걸 사용할 수 있다면?"** 하는 생각 발생.
 
-그래서 SuperClaude의 아키텍처를 분석하고 Gemini CLI에 맞게 적응시키기 시작했다.
+그래서 SuperClaude의 아키텍처를 분석하고 Gemini CLI에 맞게 적응시키기 시작.
 
 ---
 
@@ -71,7 +71,7 @@ magic_mcp_enabled = False
 
 ## 오픈소스 배포
 
-개발이 완료된 후, MIT License로 오픈소스 배포를 결정했다. PyPI 패키징을 통해 `pip install SuperGemini` 한 줄로 설치 가능하도록 했다.
+개발 완료 후 MIT License로 오픈소스 배포 결정. PyPI 패키징을 통해 `pip install SuperGemini` 한 줄로 설치 가능하도록 구성.
 
 ## 현재 상태
 
@@ -98,6 +98,6 @@ magic_mcp_enabled = False
 
 ---
 
-**결론**: LLM 평가에 대한 개인적 관심이 의미있는 오픈소스 프로젝트로 발전했다. SuperClaude 팀에게 감사하며, Gemini 사용자들에게도 도움이 되길 바란다.
+**결론**: LLM 평가에 대한 개인적 관심이 의미있는 오픈소스 프로젝트로 발전. SuperClaude 팀에게 감사하며, Gemini 사용자들에게도 도움이 되길 기대.
 
 **관련 프로젝트**: [SuperGemini](/projects/#supergemini)
