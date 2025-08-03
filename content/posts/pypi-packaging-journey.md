@@ -1,7 +1,7 @@
 +++
 date = '2025-08-03T09:15:00+09:00'
 draft = false
-title = 'PyPI 패키징 완전 정복: pip install의 원리부터 배포까지'
+title = 'PyPI 패키징 과정: pip install의 원리부터 배포까지'
 description = 'SuperGemini 배포 과정에서 배운 PyPI 패키징의 모든 것'
 tags = ['PyPI', 'Python', '패키징', 'pip', 'OpenSource', '배포']
 categories = ['개발기술']
@@ -99,7 +99,7 @@ setup(
     version="3.1.2",
     author="hyunjae-labs",
     author_email="thecurrent.lim@gmail.com",
-    description="Gemini CLI를 위한 전문화된 명령어와 페르소나 시스템",
+    description="Gemini CLI를 위한 명령어와 페르소나 시스템",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/SuperGemini-Org/SuperGemini_Framework",
@@ -235,7 +235,7 @@ PyPI 프로젝트 페이지에서 확인 가능:
 
 ---
 
-## 자동화 및 최적화
+## 자동화 및 개선
 
 ### 1. GitHub Actions 자동 배포
 

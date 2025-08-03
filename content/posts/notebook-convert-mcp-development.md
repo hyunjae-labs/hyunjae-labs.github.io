@@ -4,7 +4,7 @@ date: 2024-12-28
 draft: false
 tags: ["MCP", "Claude", "AI", "개발도구", "Jupyter", "Markdown", "NPM"]
 categories: ["AI", "개발"]
-summary: "Jupyter Notebook의 메타데이터 문제를 해결하기 위해 MCP 서버를 개발한 과정이다. AI 분석에 최적화된 변환 도구를 만들고 NPM으로 배포한 경험을 기록한다."
+summary: "Jupyter Notebook의 메타데이터 문제를 해결하기 위해 MCP 서버를 개발한 과정이다. AI 분석용 변환 도구를 만들고 NPM으로 배포한 경험을 기록한다."
 ---
 
 ## 문제 발견: AI가 읽기 어려운 Jupyter Notebook
