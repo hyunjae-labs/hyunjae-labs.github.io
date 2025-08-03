@@ -1,7 +1,6 @@
 # 연락처 정보
 
 ## 공개 연락처
-- **GitHub**: @hyunjae-labs (@ 기호 포함)
 - **Email**: thecurrent.lim@gmail.com
 
 ## 링크 형식
