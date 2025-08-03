@@ -170,6 +170,16 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     const [activeStyle, setActiveStyle] = useState({ left: "0px", width: "0px" });
     const tabRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+    // Sync activeIndex with activeTab prop
+    useEffect(() => {
+      if (activeTab) {
+        const index = tabs.findIndex(tab => tab.id === activeTab);
+        if (index !== -1) {
+          setActiveIndex(index);
+        }
+      }
+    }, [activeTab, tabs]);
+
     useEffect(() => {
       if (hoveredIndex !== null) {
         const hoveredElement = tabRefs.current[hoveredIndex];
@@ -196,16 +206,16 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
 
     useEffect(() => {
       requestAnimationFrame(() => {
-        const firstElement = tabRefs.current[0];
-        if (firstElement) {
-          const { offsetLeft, offsetWidth } = firstElement;
+        const activeElement = tabRefs.current[activeIndex];
+        if (activeElement) {
+          const { offsetLeft, offsetWidth } = activeElement;
           setActiveStyle({
             left: `${offsetLeft}px`,
             width: `${offsetWidth}px`,
           });
         }
       });
-    }, []);
+    }, [activeIndex]);
 
     return (
       <div 
@@ -266,10 +276,16 @@ interface VercelBlogProps {
 
 const VercelBlog: React.FC<VercelBlogProps> = ({ initialPosts }) => {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
+  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>(initialPosts);
   const [allPosts, setAllPosts] = useState<BlogPost[]>(initialPosts);
 
-  const categories = ['All', 'Posts', 'Repositories', 'Documents', 'About'];
+  const categories = ['All', 'Posts', 'Projects', 'Resources', 'About'];
+
+  // initialPosts가 변경될 때 상태 업데이트
+  useEffect(() => {
+    setAllPosts(initialPosts);
+    setActiveCategory("All");
+  }, [initialPosts]);
 
   useEffect(() => {
     if (activeCategory === "All") {
@@ -304,7 +320,7 @@ const VercelBlog: React.FC<VercelBlogProps> = ({ initialPosts }) => {
               Blog
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The latest news, updates, and insights from our team.
+              A space to document and share my development journey and learnings.
             </p>
           </div>
         </div>
@@ -316,6 +332,7 @@ const VercelBlog: React.FC<VercelBlogProps> = ({ initialPosts }) => {
           <div className="flex justify-center py-6">
             <Tabs
               tabs={tabs}
+              activeTab={activeCategory.toLowerCase()}
               onTabChange={(tabId) => {
                 const category = categories.find(cat => cat.toLowerCase() === tabId);
                 if (category) {

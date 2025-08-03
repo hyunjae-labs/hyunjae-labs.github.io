@@ -30,23 +30,3 @@ export function InteractiveLink({ href, children, className, style }: Interactiv
     </Link>
   );
 }
-
-export function InteractiveAnchor({ href, children, style }: InteractiveLinkProps) {
-  return (
-    <a
-      href={href}
-      style={{
-        ...style,
-        transition: 'color 0.2s',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.color = '#000';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.color = '#666';
-      }}
-    >
-      {children}
-    </a>
-  );
-}

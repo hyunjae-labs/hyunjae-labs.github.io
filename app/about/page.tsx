@@ -3,9 +3,9 @@ import fs from 'fs/promises';
 import path from 'path';
 import { processMarkdown } from '@/lib/markdown';
 import Link from 'next/link';
-import { Header } from '@/components/layout/Header';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 import { SimpleFooter } from '@/components/layout/SimpleFooter';
-import './vercel-about.css';
 
 // TOML frontmatter를 파싱하는 함수
 function parseTOMLFrontmatter(content: string): { data: any; content: string } {
@@ -96,42 +96,68 @@ export default async function AboutPage() {
   }
   
   return (
-    <div className="page__container light-theme">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <Header />
+      <header className="border-b border-border bg-background/95 backdrop-blur sticky top-0 z-40">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center space-x-4">
+            <Link href="/">
+              <Button variant="ghost" size="sm">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back
+              </Button>
+            </Link>
+            <h1 className="text-xl font-semibold">Hyunjae's Blog</h1>
+          </div>
+        </div>
+      </header>
 
       {/* Hero Section */}
-      <section className="hero__section">
-        <div className="hero__container">
-          {/* Breadcrumb */}
-          <div className="hero__breadcrumb">
-            <Link href="/" className="hero__breadcrumb-link">
-              <svg height="16" viewBox="0 0 16 16" width="16" style={{ width: '12px', height: '12px' }}>
-                <path d="M6.46966 13.7803L6.99999 14.3107L8.06065 13.25L7.53032 12.7197L3.56065 8.75001H14.25H15V7.25001H14.25H3.56065L7.53032 3.28034L8.06065 2.75001L6.99999 1.68935L6.46966 2.21968L1.39644 7.2929C1.00592 7.68342 1.00592 8.31659 1.39644 8.70711L6.46966 13.7803Z" fill="currentColor"></path>
-              </svg>
-              Blog
-            </Link> / <b><span style={{ color: '#000' }}>About</span></b>
+      <div className="border-b border-border">
+        <div className="container mx-auto px-4 py-16 max-w-4xl">
+          <div className="text-center space-y-4">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
+              {about.title}
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              {/* AI와 자동화를 좋아하는 개발자입니다. */}
+            </p>
           </div>
-
-          {/* Title */}
-          <h1 className="hero__title">
-            {about.title}
-          </h1>
         </div>
-      </section>
-
-      {/* Main Article */}
-      <main className="article__main">
-        <article className="article__container">
-          {/* Main Content */}
+      </div>
+      
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-16 max-w-4xl">
+        <article>
           {about.content && (
-            <div className="article__content">
+            <div className="prose prose-lg max-w-none dark:prose-invert mb-16">
               <div 
                 dangerouslySetInnerHTML={{ __html: about.content }}
-                className="markdown-content"
               />
             </div>
           )}
+
+          {/* CTA Section */}
+          <div className="mt-16 p-8 bg-gray-50 dark:bg-gray-900 rounded-lg text-center border">
+            <h3 className="text-2xl font-bold mb-4">
+              Let's Connect
+            </h3>
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              {/* AI, 자동화, 또는 그냥 이야기하고 싶으시다면 언제든 연락주세요! */}
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button asChild>
+                <a href="https://github.com/hyunjae-labs" target="_blank" rel="noopener noreferrer">
+                  GitHub Profile
+                </a>
+              </Button>
+              <Button variant="outline" asChild>
+                <a href="mailto:thecurrent.lim@gmail.com">
+                  Send Email
+                </a>
+              </Button>
+            </div>
+          </div>
         </article>
       </main>
 

@@ -2,6 +2,8 @@
 
 /* Core Layout Classes */
 .page__container {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background: #fafafa;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;

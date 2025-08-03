@@ -1,5 +1,5 @@
 ---
-title: "notebook-convert-mcp 개발기: Jupyter 노트북 메타데이터 문제 해결하기"
+title: "notebook-convert-mcp 개발: Jupyter 노트북 메타데이터 문제 해결하기"
 date: 2024-12-28
 draft: false
 tags: ["MCP", "Claude", "AI", "개발도구", "Jupyter", "Markdown", "NPM"]

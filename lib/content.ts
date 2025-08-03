@@ -34,7 +34,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '2',
-    title: 'PyPI 패키징 경험: notebook-convert-mcp 배포기',
+    title: 'PyPI 패키징 경험: notebook-convert-mcp 배포',
     excerpt: 'MCP 툴을 처음으로 PyPI에 배포하면서 겪은 과정과 배운 점들',
     author: {
       name: 'Hyunjae Lim',
@@ -48,7 +48,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '3',
-    title: 'Notebook Convert MCP 개발기',
+    title: 'Notebook Convert MCP 개발',
     excerpt: 'Jupyter Notebook과 Markdown 간 변환을 위한 MCP 도구 개발 과정',
     author: {
       name: 'Hyunjae Lim',
@@ -60,7 +60,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'notebook-convert-mcp-development',
     tags: ['jupyter', 'markdown', 'conversion', 'mcp', '개발일지']
   },
-  // Repositories (Projects)
+  // Projects
   {
     id: '4',
     title: 'SuperGemini',
@@ -71,7 +71,7 @@ export const blogPosts: BlogPost[] = [
     },
     publishedAt: '2025-08-03',
     readTime: '2 min read',
-    category: 'Repositories',
+    category: 'Projects',
     slug: 'supergemini',
     tags: ['Gemini', 'Framework', 'CLI']
   },
@@ -85,11 +85,11 @@ export const blogPosts: BlogPost[] = [
     },
     publishedAt: '2025-08-02',
     readTime: '2 min read',
-    category: 'Repositories',
+    category: 'Projects',
     slug: 'notebook-convert-mcp',
     tags: ['jupyter', 'markdown', 'mcp', 'python']
   },
-  // Documents (Resources)
+  // Resources
   {
     id: '6',
     title: 'Claude Code MCP Setup Guide',
@@ -100,7 +100,7 @@ export const blogPosts: BlogPost[] = [
     },
     publishedAt: '2025-01-03',
     readTime: '15 min read',
-    category: 'Documents',
+    category: 'Resources',
     slug: 'claude-code-mcp-setup-guide',
     tags: ['claude-code', 'mcp', 'setup', 'configuration']
   },
@@ -114,7 +114,7 @@ export const blogPosts: BlogPost[] = [
     },
     publishedAt: '2025-01-02',
     readTime: '12 min read',
-    category: 'Documents',
+    category: 'Resources',
     slug: 'gemini-cli-mcp-setup-guide',
     tags: ['gemini-cli', 'mcp', 'setup', 'configuration']
   },
@@ -128,7 +128,7 @@ export const blogPosts: BlogPost[] = [
     },
     publishedAt: '2025-01-01',
     readTime: '10 min read',
-    category: 'Documents',
+    category: 'Resources',
     slug: 'superclaude-automerge',
     tags: ['superclaude', 'automation', 'claude']
   },
@@ -136,7 +136,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '9',
     title: 'About Me',
-    excerpt: 'AI와 자동화를 좋아하는 개발자입니다.',
+    excerpt: '/* AI와 자동화를 좋아하는 개발자입니다. */',
     author: {
       name: 'Hyunjae Lim',
       avatar: '/api/placeholder/32/32',
