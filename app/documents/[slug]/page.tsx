@@ -1,0 +1,146 @@
+import { blogPosts } from '@/lib/content';
+import { notFound } from 'next/navigation';
+import fs from 'fs/promises';
+import path from 'path';
+import { processMarkdown } from '@/lib/markdown';
+import Link from 'next/link';
+import Script from 'next/script';
+import { Header } from '@/components/layout/Header';
+import { HeroSection } from '@/components/layout/HeroSection';
+import './vercel-documents.css';
+
+interface PostPageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+async function getDocumentContent(slug: string) {
+  try {
+    const filePath = path.join(process.cwd(), 'content', 'resources', `${slug}.md`);
+    const fileContent = await fs.readFile(filePath, 'utf8');
+    
+    // Parse frontmatter (YAML format)
+    const lines = fileContent.split('\n');
+    let contentStart = 0;
+    let frontmatterCount = 0;
+    
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].trim() === '---') {
+        frontmatterCount++;
+        if (frontmatterCount === 2) {
+          contentStart = i + 1;
+          break;
+        }
+      }
+    }
+    
+    const content = lines.slice(contentStart).join('\n');
+    const processedContent = await processMarkdown(content);
+    
+    return processedContent;
+  } catch (error) {
+    return null;
+  }
+}
+
+export default async function DocumentPage({ params }: PostPageProps) {
+  const { slug } = await params;
+  const post = blogPosts.find(p => p.slug === slug && p.category === 'Documents');
+  
+  if (!post) {
+    notFound();
+  }
+  
+  const content = await getDocumentContent(slug);
+  
+  return (
+    <div className="page__container light-theme">
+      {/* Header */}
+      <Header />
+
+      {/* Hero Section */}
+      <HeroSection category="Documents" title={post.title} />
+
+      {/* Author Section */}
+      <section className="author__section">
+        <div className="author__container">
+          <div className="author__info">
+            <div className="author__avatar">
+              <div className="author__avatar-gradient">
+                {post.author.name.charAt(0)}
+              </div>
+            </div>
+            <div className="author__details">
+              <span className="author__name">{post.author.name}</span>
+              <span className="author__title">Software Engineer</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Article */}
+      <main className="article__main">
+        <article className="article__container">
+          {/* Article metadata */}
+          <div className="article__metadata">
+            <div className="article__read-time">
+              <svg height="16" viewBox="0 0 16 16" width="16" style={{ color: '#666' }}>
+                <path d="M5.35066 2.06247C5.96369 1.78847 6.62701 1.60666 7.32351 1.53473L7.16943 0.0426636C6.31208 0.1312 5.49436 0.355227 4.73858 0.693033L5.35066 2.06247ZM8.67651 1.53473C11.9481 1.87258 14.5 4.63876 14.5 8.00001C14.5 11.5899 11.5899 14.5 8.00001 14.5C4.63901 14.5 1.87298 11.9485 1.5348 8.67722L0.0427551 8.83147C0.459163 12.8594 3.86234 16 8.00001 16C12.4183 16 16 12.4183 16 8.00001C16 3.86204 12.8589 0.458666 8.83059 0.0426636L8.67651 1.53473ZM2.73972 4.18084C3.14144 3.62861 3.62803 3.14195 4.18021 2.74018L3.29768 1.52727C2.61875 2.02128 2.02064 2.61945 1.52671 3.29845L2.73972 4.18084ZM1.5348 7.32279C1.60678 6.62656 1.78856 5.96348 2.06247 5.35066L0.693033 4.73858C0.355343 5.4941 0.131354 6.31152 0.0427551 7.16854L1.5348 7.32279ZM8.75001 4.75V4H7.25001V4.75V7.875C7.25001 8.18976 7.3982 8.48615 7.65001 8.675L9.55001 10.1L10.15 10.55L11.05 9.35L10.45 8.9L8.75001 7.625V4.75Z" fill="currentColor"></path>
+              </svg>
+              <p className="article__read-time-text">{post.readTime}</p>
+            </div>
+            <time className="article__date">
+              {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+          </div>
+
+          {/* Lead-in */}
+          <div className="article__lead-in">
+            <p>{post.excerpt}</p>
+          </div>
+
+          {/* Tags */}
+          {post.tags && (
+            <div className="tags__section">
+              {post.tags.map((tag) => (
+                <span key={tag} className="tag__item">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Main Content */}
+          {content && (
+            <div className="article__content">
+              <div 
+                dangerouslySetInnerHTML={{ __html: content }}
+                className="markdown-content"
+              />
+            </div>
+          )}
+
+        </article>
+      </main>
+
+      {/* Copy functionality script */}
+      <Script 
+        src="/posts/copy-code.js"
+        strategy="afterInteractive"
+      />
+    </div>
+  );
+}
+
+export async function generateStaticParams() {
+  return blogPosts
+    .filter(post => post.category === 'Documents')
+    .map((post) => ({
+      slug: post.slug,
+    }));
+}

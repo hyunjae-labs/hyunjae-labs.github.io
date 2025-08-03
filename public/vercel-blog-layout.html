@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The AI Cloud: A unified platform for AI workloads - Vercel</title>
+    <meta name="description" content="The same principles and ease of use you expect from Vercel, now for your agentic applications.">
+    
+    <!-- 기본 스타일링 -->
+    <style>
+        /* Vercel Blog Basic Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .dark body {
+            color: #e4e4e7;
+            background-color: #0a0a0a;
+        }
+        
+        /* 헤더 스타일 */
+        .header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .dark .header {
+            background: rgba(10, 10, 10, 0.8);
+            border-bottom: 1px solid #374151;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            color: #0070f3;
+        }
+        
+        /* 메인 콘텐츠 */
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .blog-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .blog-meta {
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+        
+        .dark .blog-meta {
+            color: #9ca3af;
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        
+        .reading-time {
+            font-size: 0.875rem;
+        }
+        
+        /* 콘텐츠 스타일 */
+        .content {
+            prose: true;
+            max-width: none;
+        }
+        
+        .content h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 코드 블록 스타일 */
+        .code-block {
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        
+        .dark .code-block {
+            background-color: #1f2937;
+        }
+        
+        .code-header {
+            display: flex;
+            align-items: center;
+            justify-content: between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .dark .code-header {
+            border-bottom: 1px solid #374151;
+        }
+        
+        .code {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        /* 이미지 스타일 */
+        .content-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .image-caption {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+        
+        .dark .image-caption {
+            color: #9ca3af;
+        }
+        
+        /* CTA 섹션 */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            background-color: white;
+            color: #667eea;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background-color: #f9fafb;
+        }
+        
+        /* 푸터 스타일 */
+        .footer {
+            background-color: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+        
+        .dark .footer {
+            background-color: #111827;
+            border-top: 1px solid #374151;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #6b7280;
+            text-decoration: none;
+        }
+        
+        .dark .footer-links a {
+            color: #9ca3af;
+        }
+        
+        .footer-links a:hover {
+            color: #0070f3;
+        }
+        
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .blog-title {
+                font-size: 2rem;
+            }
+            
+            .main-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">Vercel</a>
+            <ul class="nav-menu">
+                <li><a href="/products" class="nav-link">Products</a></li>
+                <li><a href="/solutions" class="nav-link">Solutions</a></li>
+                <li><a href="/resources" class="nav-link">Resources</a></li>
+                <li><a href="/enterprise" class="nav-link">Enterprise</a></li>
+                <li><a href="/docs" class="nav-link">Docs</a></li>
+                <li><a href="/pricing" class="nav-link">Pricing</a></li>
+            </ul>
+            <div>
+                <a href="/login" class="nav-link">Log In</a>
+                <a href="/signup" class="nav-link">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-container">
+        <div class="blog-header">
+            <h1 class="blog-title">The AI Cloud: A unified platform for AI workloads</h1>
+            <div class="author-info">
+                <img src="/author-avatar.jpg" alt="Dan Fein" class="author-avatar">
+                <div>
+                    <div>Dan Fein</div>
+                    <div>Product</div>
+                </div>
+            </div>
+            <div class="blog-meta">
+                <span class="reading-time">6 min read</span> • 
+                <time>Jul 10, 2025</time>
+            </div>
+        </div>
+
+        <article class="content">
+            <p>The same principles and ease of use you expect from Vercel, now for your agentic applications.</p>
+
+            <img src="/ai-cloud-hero.jpg" alt="AI Cloud Platform" class="content-image">
+            <p class="image-caption">The AI Cloud builds on the same foundation as the Frontend Cloud, extending its capabilities to support agentic workloads.</p>
+
+            <p>For over a decade, Vercel has helped teams develop, preview, and ship everything from static sites to full-stack apps. That mission shaped the Frontend Cloud, now relied on by millions of developers and powering some of the largest sites and apps in the world.</p>
+
+            <p>Now, AI is changing what and how we build. Interfaces are becoming conversations and workflows are becoming autonomous.</p>
+
+            <p>The AI Cloud introduces new AI-first tools and primitives, like:</p>
+            <ul>
+                <li><strong>AI SDK and AI Gateway</strong> to integrate with any model or tool</li>
+                <li><strong>Fluid compute with Active CPU pricing</strong> for high-concurrency, low-latency, cost-efficient AI execution</li>
+                <li><strong>Tool support, MCP servers, and queues</strong> for autonomous actions and background task execution</li>
+                <li><strong>Secure sandboxes</strong> to run untrusted agent-generated code</li>
+            </ul>
+
+            <h2>A unified, self-driving platform</h2>
+            <p>What makes the AI Cloud powerful is the same principle that made the Frontend Cloud successful: infrastructure should emerge from code, not manual configuration.</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span>app/api/flights/route.ts</span>
+                    <button>Copy code</button>
+                </div>
+                <pre class="code">
+import { streamText, StreamingTextResponse, tool } from 'ai';
+import { z } from 'zod';
+
+export async function POST(req: Request) {
+  const { prompt } = await req.json();
+  
+  const result = await streamText({
+    model: 'openai/gpt-4o', // This will access the model via AI Gateway
+    prompt,
+    tools: {
+      weather: tool({
+        description: 'Get the weather in a location',
+        parameters: z.object({
+          location: z.string()
+        }),
+        execute: async ({ location }) => {
+          const res = await fetch(
+            `https://api.weatherapi.com/v1/current.json?q=${location}`
+          );
+          const data = await res.json();
+          return { location, weather: data };
+        },
+      }),
+    },
+  });
+  
+  return new StreamingTextResponse(result);
+}
+                </pre>
+            </div>
+
+            <h3>AI Cloud compute</h3>
+            <p>At the core of the AI Cloud is Fluid compute, which optimizes for these workloads while eliminating traditional serverless and server tradeoffs such as cold starts, manual scaling, overprovisioning, and inefficient concurrency.</p>
+
+            <h3>Tool execution</h3>
+            <p>After reasoning, where intent is identified and plans are generated, agents often execute tools. AI SDK manages this process: registering tools, exposing them to the model, and handling execution, all running on Fluid compute.</p>
+
+            <div class="cta-section">
+                <h3 class="cta-title">Ready to build with AI?</h3>
+                <p>Start deploying AI applications with Vercel's unified platform.</p>
+                <a href="/signup" class="cta-button">Get Started</a>
+            </div>
+
+            <h2>The AI Cloud, powered by Vercel</h2>
+            <p>The web is at the early stages of this major shift: building on the decades-long move from purely static to highly dynamic, it is now entering the generative, agentic era.</p>
+
+            <p>Vercel is where modern apps are built and shipped. From the Frontend Cloud to the AI Cloud, teams operate with the speed, security, and simplicity they expect. But now, with the power of AI.</p>
+        </article>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="/ai">AI</a></li>
+                        <li><a href="/enterprise">Enterprise</a></li>
+                        <li><a href="/fluid">Fluid Compute</a></li>
+                        <li><a href="/nextjs">Next.js</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/docs">Docs</a></li>
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/templates">Templates</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

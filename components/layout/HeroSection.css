@@ -1,0 +1,67 @@
+/* Unified Hero Section Styles */
+.hero__section {
+  background-color: #fafafa;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.hero__container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  text-align: center; /* Ensure center alignment */
+}
+
+.hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the breadcrumb */
+  gap: 12px;
+  margin-bottom: 32px;
+  color: #666666;
+  font-size: 14px;
+}
+
+.hero__breadcrumb-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666666;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.hero__breadcrumb-link:hover {
+  color: #000000;
+}
+
+.hero__breadcrumb-single {
+  color: #666666;
+  font-size: 14px;
+}
+
+.hero__title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: #000000;
+  text-align: center; /* Explicit center alignment */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero__container {
+    padding: 48px 24px;
+  }
+  
+  .hero__title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 28px;
+  }
+}

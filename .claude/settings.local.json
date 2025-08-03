@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest init:*)",
+      "Bash(npx shadcn add:*)",
+      "mcp__magic__21st_magic_component_builder",
+      "WebFetch(domain:vercel.com)",
+      "WebFetch(domain:vercel.com)",
+      "WebFetch(domain:vercel.com)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_evaluate"
+    ],
+    "deny": []
+  }
+}

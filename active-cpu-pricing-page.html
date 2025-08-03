@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="__variable_9126c9 __variable_2743a1 light-theme" lang="en" style="background-color: rgb(250, 250, 250); color-scheme: light;">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Introducing Active CPU pricing for Fluid compute - Vercel</title>
+    <meta name="description" content="Fluid compute now uses Active CPU pricing. Only pay CPU rates when your function is actively computing.">
+    <link rel="icon" href="https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/favicon.ico">
+    
+    <!-- Critical CSS inline to avoid render blocking -->
+    <style>
+        * { box-sizing: border-box; }
+        html { background: #fafafa; font-family: system-ui, sans-serif; }
+        body { margin: 0; color: #000; }
+        .light-theme { background: #fafafa; color: #000; }
+        .dark-theme { background: #000; color: #fff; }
+        .tailwind { /* Preserve tailwind classes */ }
+    </style>
+    
+    <!-- Essential theme script -->
+    <script>
+    (function() {
+        try {
+            const theme = localStorage.getItem('zeit-theme') || 'light';
+            document.documentElement.className = theme === 'dark' ? 'dark-theme' : 'light-theme';
+        } catch(e) {}
+    })();
+    </script>
+</head>
+<body class="tailwind">
+    <div id="__next">
+        <main style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+            <header style="margin-bottom: 2rem;">
+                <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">Introducing Active CPU pricing for Fluid compute</h1>
+                <p style="font-size: 1.125rem; color: #666;">Fluid compute now uses Active CPU pricing. Only pay CPU rates when your function is actively computing. Building on existing Fluid gains, this brings additional savings of up to 90% for workloads like LLM calls, AI agents, or tasks with idle time.</p>
+            </header>
+            
+            <section style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.875rem; font-weight: 600; margin-bottom: 1rem;">Key Benefits</h2>
+                <ul style="list-style: disc; margin-left: 2rem; line-height: 1.6;">
+                    <li>Only pay for active CPU computation time</li>
+                    <li>Up to 90% savings for idle workloads</li>
+                    <li>Perfect for LLM calls and AI agents</li>
+                    <li>Seamless integration with existing Fluid compute</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2 style="font-size: 1.875rem; font-weight: 600; margin-bottom: 1rem;">Getting Started</h2>
+                <p style="line-height: 1.6; margin-bottom: 1rem;">Active CPU pricing is automatically enabled for all new Fluid compute functions. Existing functions will be migrated gradually over the coming weeks.</p>
+                <a href="https://vercel.com/docs/functions/fluid-compute" style="display: inline-block; background: #000; color: #fff; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 0.375rem;">Learn More</a>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Essential runtime scripts --><script id="theme-script">((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=["light","dark"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c="class"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f?.[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&"system"===a?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":a;k(d)}catch(a){}})("class","zeit-theme","system",null,["light","dark"],{"light":"light-theme","dark":"dark-theme"},true,true)</script>
+<script src="/vc-ap-vercel-marketing/_next/static/chunks/webpack-0141bfbb68a6c0cd.js?dpl=dpl_b7ecfDncfNrgPE9c6YKkA2oHDK4j" id="_R_" async=""></script>
+    
+    <!-- Analytics -->
+    <script src="/_vercel/insights/script.js" defer></script>
+    <script src="/_vercel/speed-insights/script.js" defer></script>
+</body>
+</html>
